@@ -123,26 +123,42 @@ module.exports = function(app) {
 
     // Get survey response summary
     app.get("/api/user/:uid/survey/:sid/response", function(req, res) {
-        db.SurveyResponse.query(
-            "SELECT survey_id, question_id, choice_id, COUNT(*) FROM survey_response WHERE survey_id = ? GROUP BY s.survey_id , sr.question_id , sr.choice_id ORDER BY s.survey_id , sr.question_id , sr.choice_id ASC", 
-            { 
-                replacements: [req.params.sid], 
-                // type: db.QueryTypes.SELECT 
-            }
-        ).then(function(surveyResponseSummary) {
-            res.json(surveyResponseSummary);
-        }).catch(function(error) {
-            res.status(500).json({ error });
-        });
-
-
-        // db.SurveyResponse.bulkCreate(
-        //     util.submitSurveyReqJsonToDbMapper(req.body, req.params.sid)
-        // ).then(function(surveyResponse) {
-        //     res.json(surveyResponse);
+        // db.SurveyResponse.query(
+        //     "SELECT survey_id, question_id, choice_id, COUNT(*) FROM survey_response WHERE survey_id = ? GROUP BY s.survey_id , sr.question_id , sr.choice_id ORDER BY s.survey_id , sr.question_id , sr.choice_id ASC", 
+        //     { 
+        //         replacements: [req.params.sid], 
+        //         // type: db.QueryTypes.SELECT 
+        //     }
+        // ).then(function(surveyResponseSummary) {
+        //     res.json(surveyResponseSummary);
         // }).catch(function(error) {
         //     res.status(500).json({ error });
         // });
+
+
+        db.SurveyResponse.findAll({
+            include: [{
+                model: db.SurveyQuestion,
+                where: {
+                    survey_id: req.params.sid
+                },
+                attributes: ["question_text"],
+                include: [{
+                    model: db.SurveyQuestionChoice,
+                    attributes: ["choice_text"]
+                }]
+            }],
+            where:{
+                survey_id: req.params.sid
+            },
+            // group: ["survey_id", "question_id", "choice_id"],
+            // //attributes: ['TagName', [sequelize.fn('COUNT', 'TagName'), 'TagCount']],
+            // attribute: ["survey_id", "question_id","question_text", "choice_id", "choice_text", [db.SurveyResponse.fn('COUNT'), 'Count']]
+        }).then(function(surveyResponse) {
+            res.json(surveyResponse);
+        }).catch(function(error) {
+            res.status(500).json({ error });
+        });
     });
 
 };

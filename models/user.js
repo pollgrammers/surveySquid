@@ -39,7 +39,7 @@ module.exports = function(Sequelize, DataTypes) {
 
     User.associate = function(models) {
         User.hasMany(models.Survey, { foreignKey: "user_id", targetKey:"user_id" });
-        User.hasMany(models.SurveyResponse, {foreignKey: "user_id", targetKey:"respondent_user_id" });
+        User.hasMany(models.SurveyResponse, {foreignKey: "respondent_user_id", targetKey:"user_id" });
 
     };
 

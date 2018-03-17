@@ -1,4 +1,4 @@
-CREATE DATABASE surveysquid1;
+CREATE DATABASE surveysquid;
 
 USE surveysquid1;
 
