@@ -7,7 +7,7 @@ https://floating-temple-72911.herokuapp.com/api/user
 
 ###HTTP Method: POST
 ###HTTP Body:
-
+```
 {
 
 	"user_email": "test@gmail.com",
@@ -15,7 +15,7 @@ https://floating-temple-72911.herokuapp.com/api/user
 	"user_lname": "test_lname",
 	"user_image": "test image"
 }
-
+```
 
 
 
@@ -34,14 +34,14 @@ https://floating-temple-72911.herokuapp.com/api/user/{id}
 
 ###HTTP Method: PUT
 ###HTTP Body:
-
+```
 {
 	"user_email": "test_update@gmail.com",
 	"user_fname": "test_update_fname",
 	"user_lname": "test_update_lname",
 	"user_image": "test image update"
 }
-
+```
 
 
 
@@ -52,6 +52,7 @@ https://floating-temple-72911.herokuapp.com/api/user/{id}/survey
 ###HTTP Method: POST
 ###HTTP Body:
 
+```
 {
     "user_id": "1",
     "survey_name": "Drink choice",
@@ -80,7 +81,7 @@ https://floating-temple-72911.herokuapp.com/api/user/{id}/survey
         }
     ]
 }
-
+```
 
 
 
@@ -118,7 +119,7 @@ https://floating-temple-72911.herokuapp.com/api/user/{id}/survey/{surveyId}/resp
 
 ###HTTP Method: POST
 ###HTTP Body:
-
+```
 {
     "SurveyQuestions": [
         {
@@ -131,7 +132,7 @@ https://floating-temple-72911.herokuapp.com/api/user/{id}/survey/{surveyId}/resp
         }
     ]
 }
-
+```
 
 
 

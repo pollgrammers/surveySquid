@@ -11,7 +11,7 @@ module.exports = function(Sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             field: "respondent_user_id",
             allowNull: true,
-            defaultValue: 0
+            defaultValue: 1
         },
         survey_id: {
             type: DataTypes.INTEGER,
