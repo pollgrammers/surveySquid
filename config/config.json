@@ -1,23 +1,30 @@
 {
-  "development": {
-    "username": "root",
-    "password": "admin",
-    "database": "surveysquid1",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
+    // "development":
+    // {
+    //     "username": "root",
+    //     "password": "admin",
+    //     "database": "surveysquid1",
+    //     "host": "127.0.0.1",
+    //     "dialect": "mysql"
+    // },
+    "development":
+    {
+        "use_env_variable": "process.env.JAWSDB_URL"
+    },
+    "test":
+    {
+        "username": "root",
+        "password": null,
+        "database": "database_test",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production":
+    {
+        "username": "root",
+        "password": null,
+        "database": "database_production",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
 }
