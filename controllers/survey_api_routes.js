@@ -22,7 +22,7 @@ module.exports = function(app) {
                     },
                     attributes: []
                 }],
-                order: 'survey_start_date ASC'
+                // order: 'survey_start_date ASC'
             };
         } else {
             dbSearchObject = {
@@ -38,7 +38,7 @@ module.exports = function(app) {
                     },
                     attributes: []
                 }],
-                order: 'survey_start_date ASC'
+                // order: 'survey_start_date ASC'
             };
         }
 
