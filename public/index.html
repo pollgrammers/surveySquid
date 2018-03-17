@@ -12,7 +12,12 @@
 
     <title>SurveySquid</title>
 
+
+    <!-- Bootstrap CSS file -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Main stylesheet for template -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
@@ -32,17 +37,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">SurveySquid</a>
+
+              <a class="navbar-brand" href="#" width="60px">
+                <img src="images/placeholder-logo.png" width="30"  class="d-inline-block align-top" height="30" alt="SurveySquid Logo">
+                SurveySquid
+              </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
+              <ul class="nav nav-pills navbar-nav nav-fill">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a class="nav-item nav-link" href="#about">About</a></li>
+                <li><a class="nav-item nav-link" href="#contact">Contact</a></li>
+                <li><a class="nav-item nav-link" href="#">Login</a></li>
               </ul>
-              <span>
-                <a class="nav-link" href="#">Login</a>
-              </span>
             </div>
           </div>
         </nav>
@@ -57,46 +64,48 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
+  <div class="container marketing">
       
-      <div class="jumbotron" style="background-color:#449DD1; display: flex;">
-        <div style="display: flex;"> 
-          <img class="" src="http://lorempixel.com/300/300/city/4" alt="Logo placeholder image">
+    <div class="jumbotron" style="background-color:#449DD1; display: flex;">
+        <div class="row">
+          <div class="col-md-4">
+            <img class="jumbotron-image" src="images/surveySquidLogo.png" alt="SurveySquid Logo">
+          </div>
+          <div class="col-md-8">
+            <h1>Welcome to SurveySquid!</h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation</p>
+          </div>
+            <hr>
+        <div class="row">
+          <a class="col-md-3 btn btn-primary btn-lg glyphicon glyphicon-list-alt jumbotron-link" href="#" role="button">Create Survey</a>
+          <a class="col-md-3 btn btn-primary btn-lg jumbotron-link" href="#" role="button">My Surveys</a>
         </div>
-        <div style="display: flex;">
-          <h1>Welcome to SurveySquid!</h1>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation</p>
-          <div>
-            <a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: #150578">Create Survey</a>
-            <a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: #150578">View Surveys</a>
-            <a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: #150578">My Surveys</a>
-          </div> 
-        </div>  
       </div>
+    </div>
+
+
+        <div class="row survey-buttons survey-btn">
+          <a class="col-md-6 btn btn-primary btn-lg survey-btn" href="#"  role="button" id="survey-btn-1"><span class="glyphicon glyphicon-list-alt"></span>   Create Survey</a>
+          <a class="col-md-6 btn btn-primary btn-lg survey-btn" href="#" role="button" id="survey-btn-2">My Surveys</a>
+        </div>
 
       <!-- Three columns of text below Jumbotron -->
       <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="http://lorempixel.com/140/140/city/4" alt="Generic placeholder image" width="140" height="140">
-          <h2>New Surveys</h2>
+        <div class="col-lg-6">
+          <!-- <img class="img-circle" src="http://lorempixel.com/140/140/city/4" alt="Generic placeholder image" width="140" height="140"> -->
+          <h2>Create Surveys</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
           <p><a class="btn btn-danger btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="http://lorempixel.com/140/140/city/2" alt="Generic placeholder image" width="140" height="140">
+        <div class="col-lg-6">
+          <!--<img class="img-circle" src="http://lorempixel.com/140/140/city/2" alt="Generic placeholder image" width="140" height="140"> -->
           <h2>My Surveys</h2>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
           <p><a class="btn btn-success btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="http://lorempixel.com/140/140/city/3" alt="Generic placeholder image" width="140" height="140">
-          <h2>View Surveys</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-info btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+        </div>
+      </div>
 
 
       <!-- START THE FEATURETTES -->
@@ -138,89 +147,49 @@
       </div>
 
       <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
+   <!-- /END THE FEATURETTES -->
 
 <!-- Card Decks -->
-<div class="card-deck">
-  <div class="col-md-4">
-    <div class="card">
-      <img class="card-img-top" src="http://lorempixel.com/350/150/business/1" alt="Card image cap">
-      <div class="card-body">
-        <h3 class="card-title">HTML SURVEY</h3>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+  <div class="card-deck">
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="http://lorempixel.com/350/150/business/1" alt="Card image cap">
+        <div class="card-body">
+          <h3 class="card-title">HTML SURVEY</h3>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link btn btn-default">View Survey</a>
+        </div>
       </div>
-      <div class="card-footer">
-        <a href="#" class="card-link btn btn-default">View Survey</a>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
+        <div class="card-body">
+          <h3 class="card-title">CSS SURVEY</h3>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link btn btn-default">View Survey</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src="http://lorempixel.com/350/150/business/3" alt="Card image cap">
+        <div class="card-body">
+          <h3 class="card-title">JAVASCRIPT SURVEY</h3>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link btn btn-default">View Survey</a>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="col-md-4">
-    <div class="card">
-      <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
-      <div class="card-body">
-        <h3 class="card-title">CSS SURVEY</h3>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      </div>
-      <div class="card-footer">
-        <a href="#" class="card-link btn btn-default">View Survey</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="card">
-      <img class="card-img-top" src="http://lorempixel.com/350/150/business/3" alt="Card image cap">
-      <div class="card-body">
-        <h3 class="card-title">JAVASCRIPT SURVEY</h3>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      </div>
-      <div class="card-footer">
-        <a href="#" class="card-link btn btn-default">View Survey</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="card">
-      <img class="card-img-top" src="http://lorempixel.com/350/150/business/4" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">JQUERY SURVEY</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card-footer">
-        <a href="#" class="card-link btn btn-default">View Survey</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="card">
-      <img class="card-img-top" src="http://lorempixel.com/350/150/business/5" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">AJAX SURVEY</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      </div>
-      <div class="card-footer">
-        <a href="#" class="card-link btn btn-default">View Survey</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4">
-    <div class="card">
-      <img class="card-img-top" src="http://lorempixel.com/350/150/business/6" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">EXPRESS SURVEY</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      </div>
-      <div class="card-footer">
-        <a href="#" class="card-link btn btn-default">View Survey</a>
-      </div>
-    </div>
-  </div>
-
 
 
 
@@ -230,7 +199,9 @@
         <p>&copy; 2018 SurveySquid &middot; <a href="#">About</a> &middot; <a href="#">Contact</a></p>
       </footer>
 
-    </div><!-- /.container -->
+  </div><!-- /.container --> 
+
+
 
 
     <!-- Bootstrap core JavaScript

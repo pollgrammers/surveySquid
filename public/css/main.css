@@ -1,0 +1,32 @@
+.container {
+
+
+}
+
+.jumbotron-image {
+
+	height: 300px;
+	width: 300px;
+}
+
+.jumbotron-link{
+	margin: 10px;
+	background-color: #150578;
+	font-size: 24px;
+}
+
+
+.survey-buttons {
+	padding-right: 15px;
+	padding-left: 15px;
+	}	
+
+#survey-btn-1 {
+	background-color: #150578;
+	padding-left: 15px;
+}
+
+#survey-btn-2 {
+	background-color: #150578;
+	padding-right: 15px;
+}
