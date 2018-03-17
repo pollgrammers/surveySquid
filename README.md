@@ -1,12 +1,12 @@
 # surveySquid
 
 
-##Create an user:
+## Create an user:
 
 https://floating-temple-72911.herokuapp.com/api/user
 
-###HTTP Method: POST
-###HTTP Body:
+### HTTP Method: POST
+### HTTP Body:
 ```
 {
 
@@ -19,21 +19,21 @@ https://floating-temple-72911.herokuapp.com/api/user
 
 
 
-##Get user details:
+## Get user details:
 
 https://floating-temple-72911.herokuapp.com/api/user/{id}
 
-###HTTP Method: GET
+### HTTP Method: GET
 
 
 
 
-##Update user details:
+## Update user details:
 
 https://floating-temple-72911.herokuapp.com/api/user/{id}
 
-###HTTP Method: PUT
-###HTTP Body:
+### HTTP Method: PUT
+### HTTP Body:
 ```
 {
 	"user_email": "test_update@gmail.com",
@@ -45,12 +45,12 @@ https://floating-temple-72911.herokuapp.com/api/user/{id}
 
 
 
-##Create a new survery:
+## Create a new survery:
 
 https://floating-temple-72911.herokuapp.com/api/user/{id}/survey
 
-###HTTP Method: POST
-###HTTP Body:
+### HTTP Method: POST
+### HTTP Body:
 
 ```
 {
@@ -86,39 +86,39 @@ https://floating-temple-72911.herokuapp.com/api/user/{id}/survey
 
 
 
-##Get all surveys created by a user
+## Get all surveys created by a user
 
 https://floating-temple-72911.herokuapp.com/api/user/{id}/survey
 
-###HTTP Method: GET
+### HTTP Method: GET
 
 
 
 
-##Search surveys created by a user
+## Search surveys created by a user
 
 https://floating-temple-72911.herokuapp.com/api/user/{id}/survey?search={search string}
 
-###HTTP Method: GET
+### HTTP Method: GET
 
 
 
 
-##Get survey details (not the survey result)
+## Get survey details (not the survey result)
 
 https://floating-temple-72911.herokuapp.com/api/user/{id}/survey/{surveyId}
 
-###HTTP Method: GET
+### HTTP Method: GET
 
 
 
 
-##Respond/submit to a survey:
+## Respond/submit to a survey:
 
 https://floating-temple-72911.herokuapp.com/api/user/{id}/survey/{surveyId}/response
 
-###HTTP Method: POST
-###HTTP Body:
+### HTTP Method: POST
+### HTTP Body:
 ```
 {
     "SurveyQuestions": [
@@ -137,8 +137,8 @@ https://floating-temple-72911.herokuapp.com/api/user/{id}/survey/{surveyId}/resp
 
 
 
-##Get survey response/result 
+## Get survey response/result 
 
 https://floating-temple-72911.herokuapp.com/api/user/{id}/survey/{surveyId}/response
 
-###HTTP Method: GET
+### HTTP Method: GET
