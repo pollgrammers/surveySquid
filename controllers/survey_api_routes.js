@@ -3,7 +3,8 @@
 // *********************************************************************************
 
 var db = require("../models");
-var util = require("./util.js")
+var util = require("./util.js");
+var Sequelize = require('sequelize');
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -123,11 +124,11 @@ module.exports = function(app) {
 
     // Get survey response summary
     app.get("/api/user/:uid/survey/:sid/response", function(req, res) {
-        // db.SurveyResponse.query(
-        //     "SELECT survey_id, question_id, choice_id, COUNT(*) FROM survey_response WHERE survey_id = ? GROUP BY s.survey_id , sr.question_id , sr.choice_id ORDER BY s.survey_id , sr.question_id , sr.choice_id ASC", 
+        // db.sequelize.query(
+        //     "SELECT s.survey_id, s.survey_name, s.survey_desc, s.survey_type, s.survey_start_date, s.survey_end_date, sq.question_id, sq.question_type, sq.question_text, sqc.choice_id, sqc.choice_text, sr.choice_count FROM survey s INNER JOIN survey_question sq ON s.survey_id = sq.survey_id INNER JOIN survey_question_choice sqc ON sq.question_id = sqc.question_id LEFT OUTER JOIN (SELECT survey_id, question_id, choice_id, COUNT(*) AS choice_count FROM survey_response WHERE survey_id = :surveyId GROUP BY survey_id , question_id , choice_id ) AS sr ON sr.survey_id = s.survey_id AND sr.question_id = sq.question_id AND sr.choice_id = sqc.choice_id WHERE s.survey_id = :surveyId ORDER BY s.survey_id , sq.question_id , sqc.choice_id ASC", 
         //     { 
-        //         replacements: [req.params.sid], 
-        //         // type: db.QueryTypes.SELECT 
+        //         replacements: {surveyId: req.params.sid}, 
+        //         type: db.sequelize.QueryTypes.SELECT 
         //     }
         // ).then(function(surveyResponseSummary) {
         //     res.json(surveyResponseSummary);
@@ -135,30 +136,35 @@ module.exports = function(app) {
         //     res.status(500).json({ error });
         // });
 
-
-        db.SurveyResponse.findAll({
+        db.Survey.findAll({
             include: [{
                 model: db.SurveyQuestion,
-                where: {
-                    survey_id: req.params.sid
-                },
-                attributes: ["question_text"],
+                attributes: ["question_id", "question_text"],
                 include: [{
                     model: db.SurveyQuestionChoice,
-                    attributes: ["choice_text"]
+                    // as: "SurveyQuestionChoice",
+                    attributes: ["choice_id","choice_text"],
+                    include: [{
+                        model: db.SurveyResponse,
+                        where: Sequelize.where(Sequelize.col("SurveyQuestions->SurveyQuestionChoices->SurveyResponse.question_id"), "=", Sequelize.col("SurveyQuestions.question_id")),
+                        where: Sequelize.where(Sequelize.col("SurveyQuestions->SurveyQuestionChoices->SurveyResponse.survey_id"), "=", Sequelize.col("Survey.survey_id")),    
+                        attributes: [[Sequelize.fn("COUNT","*"), "choice_count"]],
+                        required: false
+                    }
+                    ]
                 }]
-            }],
+            }
+            ],
             where:{
                 survey_id: req.params.sid
             },
-            // group: ["survey_id", "question_id", "choice_id"],
-            // //attributes: ['TagName', [sequelize.fn('COUNT', 'TagName'), 'TagCount']],
-            // attribute: ["survey_id", "question_id","question_text", "choice_id", "choice_text", [db.SurveyResponse.fn('COUNT'), 'Count']]
+            group: ["Survey.survey_id", "SurveyQuestions.question_id", "SurveyQuestions->SurveyQuestionChoices.choice_id"],
         }).then(function(surveyResponse) {
             res.json(surveyResponse);
         }).catch(function(error) {
             res.status(500).json({ error });
         });
+
     });
 
 };
