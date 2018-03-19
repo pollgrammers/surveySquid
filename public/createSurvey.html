@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>SurveySquid</title>
+
+
+    <!-- Bootstrap CSS file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Main stylesheet for template -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="#" width="60px">
+                <img src="images/surveySquidLogo.png" width="30"  class="d-inline-block align-top" height="30" alt="SurveySquid Logo">
+              </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav nav-pills navbar-nav nav-fill">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a class="nav-item nav-link" href="#about">View Surveys</a></li>
+                <li><a class="nav-item nav-link" href="#contact">Profile</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+      
+    <div class="jumbotron" style="background-color:#449DD1; display: flex;">
+      <div class="row">
+        <div class="col-md-3">
+            <img class="jumbotron-image" src="images/surveySquidLogo.png" alt="SurveySquid Logo">
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
+            <br><br><br><br>
+            <h1>Create Survey</h1>
+        </div>
+      </div>
+    </div>
+
+      <!-- Description Row -->
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">What to do</h2>
+          <p class="lead">Hello Squids! Use the form below to create a new survey.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="images/Survey-Blog-Image.png" alt="SurveyImage" width="200" height="200">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- Form Section -->
+      <div class="row featurette">
+        <div class="col-md-12">
+          <form>
+            <div class="form-group">
+              <label for="InputSurveyName"><h3>Survey Name</h3></label>
+              <input type="text" class="form-control" id="SurveyName" aria-describedby="InputSurveyName" placeholder="Create Survey Name">
+              <small id="InputSurveyName" class="form-text text-muted">Pick something Squidalishes!</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="surveyDescription"><h3>Description</h3></label>
+              <textarea class="form-control" id="surveyDescription" rows="3" placeholder="Enter description of survey here."></textarea>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="form-group">
+              <label for="surveyQuestion"><h3>Question</h3></label>
+              <input type="text" class="form-control" id="surveyQuestion" placeholder="What would you like to ask people?">
+            </div>
+
+            <h3>Responses</h3>
+            <p>Enter in 5 responses you would like to track for your question.</p>
+            
+            <div class="form-group">
+              <label for="response1"><h4>Response 1</h4></label>
+              <input type="text" class="form-control" id="response1">
+              
+              <label for="response2"><h4>Response 2</h4></label>
+              <input type="text" class="form-control" id="response2">
+
+              <label for="response3"><h4>Response 3</h4></label>
+              <input type="text" class="form-control" id="response3">
+
+              <label for="response4"><h4>Response 4</h4></label>
+              <input type="text" class="form-control" id="response4">
+
+              <label for="response5"><h4>Response 5</h4></label>
+              <input type="text" class="form-control" id="response5">
+            </div>
+
+            <!-- Survey Dates -->
+            <div class="row featurette">
+              <div class="col-md-6">
+                <h3>Start Survey On:</h3>
+              </div>
+
+              <div class="col-md-6">
+                <h3>Close Survey On:</h3>
+              </div>
+            </div>
+
+            <div class="row featurette">
+              <div class="col-md-12">
+                <div class="input-group input-daterange">
+                  <input type="text" class="form-control" value="2012-04-05">
+                  <div class="input-group-addon">to</div>
+                  <input type="text" class="form-control" value="2012-04-19">
+                </div>
+              </div>
+
+            </div>
+            <br>
+            <!-- Submit Button -->
+            <div class="row featurette">
+
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+      
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2018 SurveySquid &middot; <a href="#">About</a> &middot; <a href="#">Contact</a></p>
+      </footer>
+
+  </div><!-- /.container --> 
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
