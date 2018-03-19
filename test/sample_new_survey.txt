@@ -1,0 +1,28 @@
+{
+    "user_id": "1",
+    "survey_name": "Drink choice",
+    "survey_desc": "Survey to find most popular drink",
+    "survey_type": "public",
+    "survey_start_date": "2018-03-16",
+    "survey_end_date": "2018-03-19",
+    "SurveyQuestions": [
+        {
+            "question_type": "choice",
+            "question_text": "What is your fav drink?",
+            "SurveyQuestionChoices": [
+                {
+                    "choice_text": "Coke"
+                },
+                {
+                    "choice_text": "MountainDew"
+                },
+                {
+                    "choice_text": "Pepsi"
+                },
+                {
+                    "choice_text": "ThumbsUp"
+                }
+            ]
+        }
+    ]
+}
