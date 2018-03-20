@@ -160,7 +160,7 @@ module.exports = function(app) {
             },
             group: ["Survey.survey_id", "SurveyQuestions.question_id", "SurveyQuestions->SurveyQuestionChoices.choice_id"],
         }).then(function(surveyResponse) {
-            res.json(surveyResponse);
+            res.jsonp(surveyResponse);
         }).catch(function(error) {
             res.status(500).json({ error });
         });

@@ -1,32 +1,126 @@
-.container {
+/*background-color: #150578;*/
+/* ---------- App level styles ---------- */
 
-
+html, body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    max-width: 100%;
+    height: 100%;
+    margin: 0px;
+    background-color: white;
 }
 
-.jumbotron-image {
+.wrapper {
+  min-height: 90.3%;
+  margin-bottom: -50px;
+}
+/* ---------- End App level styles ---------- */
 
-	height: 300px;
-	width: 300px;
+
+
+
+/* ---------- Top Nav ---------- */
+
+.login {
+    padding-right: 20px;
 }
 
-.jumbotron-link{
-	margin: 10px;
-	background-color: #150578;
-	font-size: 24px;
+.nav-wrapper {
+    background-color: #333;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.brand-logo {
+    margin-bottom: 10px;
 }
 
 
-.survey-buttons {
-	padding-right: 15px;
-	padding-left: 15px;
-	}	
+/* ---------- End Top Nav ---------- */
 
-#survey-btn-1 {
-	background-color: #150578;
-	padding-left: 15px;
+
+/* ---------- Bottom Nav ---------- */
+
+.botmLinks {
+    padding-right: 20px;
 }
 
-#survey-btn-2 {
-	background-color: #150578;
-	padding-right: 15px;
+.page-footer {
+    background: #333!important;
+    padding: 0px;
+    border-top: 1px solid #a6a6a6;
 }
+
+.footer {
+    height: 40px;
+}
+
+.footer-copyright {
+    background-color: #333!important;
+}
+
+.push {
+    height: 40px;
+}
+
+
+/* ---------- End Bottom Nav ---------- */
+
+
+/* ---------- view_survey.html ---------- */
+#surveyCard {
+    margin: 5px;
+    height: 200px;
+    width: 300px;
+    float: left;
+    margin-bottom: 5px;
+}
+
+#modelSurveyResult{
+    width: 80%;
+    height: 100%;
+    margin-top: 0;
+}
+
+#modelDialog{
+    margin: 0;
+}
+/* ---------- End view_survey.html ---------- */
+
+/* ---------- media queries ---------- */
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media screen and (min-width: 576px) {}
+
+
+
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media screen and (min-width: 768px) {}
+
+
+
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media screen and (min-width: 992px) {}
+
+
+
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media screen and (min-width: 1200px) {}
+
+
+
+
+
+/* ---------- end media queries ---------- */
