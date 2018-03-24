@@ -20,8 +20,8 @@ $(document).ready(function(){
         var r3 = $("#response3").val();
         var r4 = $("#response4").val();
         var r5 = $("#response5").val();
-        var startSurvey = $("#startDate");
-        var endSurvey = $("#endDate");
+        var startSurvey = $("#startDate").val();
+        var endSurvey = $("#endDate").val();
         var queryURL = "https://floating-temple-72911.herokuapp.com/api/user/1/survey";
         var postObject = {
             "user_id": "1",
