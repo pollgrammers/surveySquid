@@ -102,6 +102,7 @@ module.exports = function(app) {
                 include: [db.SurveyQuestionChoice]
             }]
         }).then(function(newSurvey) {
+            newSurvey.survey_url = "https://floating-temple-72911.herokuapp.com/survey/" + newSurvey.survey_id + "/respond";
             res.json(newSurvey);
         }).catch(function(error) {
             res.status(500).json({ error });

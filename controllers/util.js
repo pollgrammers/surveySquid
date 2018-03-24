@@ -28,6 +28,7 @@ var util = {
         });
         return dbJson;
     },
+    
     submitSurveyReqJsonToDbMapper: function(requestJson, surveyId) {
         var dbJsonArray = [];
         var dbJson = {};
