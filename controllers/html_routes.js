@@ -5,30 +5,37 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-
+var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+    // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loads view.html
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
-  });
+    app.get("/survey/:uid", function(req, res) {
+        dbSearchObject = {
+            include: [{
+                model: db.User,
+                where: {
+                    user_id: req.params.uid
+                },
+                attributes: []
+            }],
+            // order: 'survey_start_date ASC'
+        };
+        db.Survey.findAll(dbSearchObject).then(function(surveyDetails) {
+          var hbsObject = {
+            surveyDetails: surveyDetails
+          };
+          res.render("mysurvey", hbsObject);
+        }).catch(function(error) {
+          res.status(500).json({ error });
+        });
+    });
 
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
-  });
-
-  // blog route loads blog.html
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
-  });
-
-  app.get("/create", function(req, res) {
-    console.log("We hit create route!");
-    res.sendFile(path.join(__dirname, "../public/createSurvey.html"));
-  });
+    app.get("/create", function(req, res) {
+        console.log("We hit create route!");
+        res.sendFile(path.join(__dirname, "../public/createSurvey.html"));
+    });
 
 };
