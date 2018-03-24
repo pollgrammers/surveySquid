@@ -16,8 +16,8 @@ $(function() {
         console.log("In function view survey result");
 
         var surveyId = $(this).attr("id");
-        // var queryUrl = "http://localhost:3000/api/user/1/survey/1/response";
-        var queryUrl = "https://floating-temple-72911.herokuapp.com/api/user/1/survey/1/response";
+        var queryUrl = "http://localhost:3000/api/user/1/survey/1/response";
+        // var queryUrl = "https://floating-temple-72911.herokuapp.com/api/user/1/survey/1/response";
         
         $.ajax({
             url: queryUrl,
