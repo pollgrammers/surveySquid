@@ -95,6 +95,7 @@ module.exports = function(app) {
 
     // Create a new survey
     app.post("/api/user/:uid/survey", function(req, res) {
+        console.log("in POST new survey API");
         db.Survey.create(util.surveyReqJsonToDbMapper(req.body), {
             include: [{
                 model: db.SurveyQuestion,

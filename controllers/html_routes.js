@@ -24,9 +24,12 @@ module.exports = function(app) {
             // order: 'survey_start_date ASC'
         };
         db.Survey.findAll(dbSearchObject).then(function(surveyDetails) {
-            res.render("mysurvey", surveyDetails);
+          var hbsObject = {
+            surveyDetails: surveyDetails
+          };
+          res.render("mysurvey", hbsObject);
         }).catch(function(error) {
-            res.status(500).json({ error });
+          res.status(500).json({ error });
         });
     });
 
