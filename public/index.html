@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,158 +9,127 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
     <title>SurveySquid</title>
-<!-- Reset CSS -->
-<link rel="stylesheet" type="text/css" href="css/reset.css" />
-<!-- Bootstrap CSS file -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-<!-- Bootstrap Links -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
- <!-- JQuery -->
- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
-<!-- Materialze CSS and Javascript-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- Main stylesheet SurveySquid CSS-->
-<link rel="stylesheet" type="text/css" href="css/main.css">
-
-<!-- Custom Java for this template -->
-<script src="./javascript/createSurvey.js"></script>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <!-- Bootstrap CSS file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Bootstrap Links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Materialze CSS and Javascript-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Main stylesheet SurveySquid CSS-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- link to load google API for signin -->
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <!-- Custom Java for this template -->
+    <script src="./javascript/createSurvey.js"></script>
 </head>
-
 <!-- NAVBAR
 ================================================== -->
-  <body>
-    <div id="topNav">
-        <ul id="dropdown1" class="dropdown-content">
-          <li><a href="profile.html">Profile</a></li>
-          <li class="divider"></li>
-          <li><a href="#" id="navSignout">Logout</a></li>
-        </ul>
-        <ul id="dropdown2" class="dropdown-content">
-          <li><a href="profile.html">Profile</a></li>
-          <li class="divider"></li>
-          <li><a href="#" id="navSignout">Logout</a></li>
-        </ul>
-  
-        <nav>
-          <div class="nav-wrapper">
-            <!-- <a href="feed.html" class="brand-logo"><img class="logo" src="images/placeholder-logo.png"></a> -->
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="feed.html" class="redText">My Surveys</a></li>
-                <li><a href="create.html" class="redText">Create Survey</a></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-button redText" href="#!" data-activates="dropdown1">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="feed.html" class="redText">My Survey</a></li>
-                <li><a href="create.html" class="redText">Create Survey</a></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-button redText" href="#!" data-activates="dropdown2">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
 
+<body>
+    <div id="topNav">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li id="btnLogin" class="redText login"><a>Login</a></li>
+                </ul>
+                <ul id="mobile-demo" class="side-nav">
+                    <li id="btnLogin" class="redText login"><a>Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
-  
     <div class="jumbotron d-flex align-items-center" style="background-color:#449DD1; display: flex;">
         <div class="row">
-          <div class="col-md-3 align-items-center">
-              <img class="jumbotron-image center-block" src="images/surveySquidLogo.png" alt="SurveySquid Logo" wideth="250" height="250">
-          </div>
-          <div class="col-md-1"></div>
-          <div class="col-md-8 text-center">
-              <br><br><br>
-              <h1>SurveySquid</h1>
-          </div>
+            <div class="col-md-3 align-items-center">
+                <img class="jumbotron-image center-block" src="images/surveySquidLogo.png" alt="SurveySquid Logo" wideth="250" height="250">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-8 text-center">
+                <br>
+                <br>
+                <br>
+                <h1>SurveySquid</h1>
+            </div>
         </div>
-      </div>
-
+    </div>
     <div class="container">
-       <div class="row">
-          <h1>Welcome Squids!</h1>
-          <p>You wont need 8 hands to create surveys using our app. Create, manage, and view surveys by logging in. Survey results will be displayed in your profile page in an easy to read bar graph. Share your survey by sending a link.</p>
-      </div>
-      <hr>
-
-
+        <div class="row">
+            <h1>Welcome Squids!</h1>
+            <p>You wont need 8 hands to create surveys using our app. Create, manage, and view surveys by logging in. Survey results will be displayed in your profile page in an easy to read bar graph. Share your survey by sending a link.</p>
+        </div>
+        <hr>
         <div class="row survey-buttons survey-btn">
-          <a class="col-md-5 btn btn-primary btn-lg survey-btn" href="#"  role="button" id="survey-btn-1"><span class="glyphicon glyphicon-list-alt"></span>   Create Survey</a>
-          <div class="col-md-2"></div>
-          <a class="col-md-5 btn btn-primary btn-lg survey-btn" href="#" role="button" id="survey-btn-2">My Surveys</a>
+            <a class="col-md-5 btn btn-primary btn-lg survey-btn" href="#" role="button" id="survey-btn-1"><span class="glyphicon glyphicon-list-alt"></span>   Create Survey</a>
+            <div class="col-md-2"></div>
+            <a class="col-md-5 btn btn-primary btn-lg survey-btn" href="#" role="button" id="survey-btn-2">My Surveys</a>
         </div>
-
-<!-- Card Decks -->
-  <div class="card-deck">
-
-      <div class="col-md-4">
-          <div class="card">
-            <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-title">CSS SURVEY</h3>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <!-- Card Decks -->
+        <div class="card-deck">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">CSS SURVEY</h3>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-link btn btn-default">View Survey</a>
+                    </div>
+                </div>
             </div>
-            <div class="card-footer">
-              <a href="#" class="card-link btn btn-default">View Survey</a>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">CSS SURVEY</h3>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-link btn btn-default">View Survey</a>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-title">CSS SURVEY</h3>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-link btn btn-default">View Survey</a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
-        <div class="card-body">
-          <h3 class="card-title">CSS SURVEY</h3>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="card-link btn btn-default">View Survey</a>
-        </div>
-      </div>
+        <!-- End Card Container -->
     </div>
-
-     <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
-        <div class="card-body">
-          <h3 class="card-title">CSS SURVEY</h3>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    <!-- bottom navigation -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <a class="left botmLinks redText" href="contact.html">Contact</a>
+                <span class="right redText">Copyright &copy; 2018 SurveySquid &middot;</span>
+            </div>
         </div>
-        <div class="card-footer">
-          <a href="#" class="card-link btn btn-default">View Survey</a>
-        </div>
-      </div>
-    </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="javascript/login.js"></script>
+    <script type="text/javascript" src="javascript/view_survey.js"></script>
+</body>
 
-  </div><!-- End Card Container -->
-
-</div>
-
-      <!-- bottom navigation -->
-      <footer class="page-footer">
-          <div class="footer-copyright">
-              <div class="container">
-                  <a class="left botmLinks redText" href="contact.html">Contact</a>
-                  <span class="right redText">Copyright &copy; 2018 SurveySquid &middot;</span>
-              </div>
-          </div>
-      </footer>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-      <script type="text/javascript" src="javascript/view_survey.js"></script>
-  </body>
-  </html>
+</html>
