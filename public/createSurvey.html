@@ -112,43 +112,47 @@
       <!-- Form Section -->
       <div class="row featurette">
         <div class="col-md-12">
-          <form>
+
+          <div id="form-messages"></div>
+
+          <form id="ajax-createSurvey" method="post" action="createSurvey.php">
             <div class="form-group">
-              <label for="InputSurveyName"><h4>Survey Name</h4></label>
-              <input type="text" class="form-control" id="SurveyName" aria-describedby="InputSurveyName" placeholder="Create Survey Name">
-              <small id="InputSurveyName" class="form-text text-muted">Pick something Squidalishes!</small>
+              <label for="surveyName"><h4>Survey Name</h4></label>
+              <input type="text" class="form-control is-valid" id="surveyName" aria-describedby="surveyName" placeholder="Create Survey Name" required>
+              <small id="surveyName" class="form-text text-muted">Pick something Squidalishes!</small>
             </div>
             
             <div class="form-group">
               <label for="surveyDescription"><h4>Description</h4></label>
-              <textarea class="form-control" id="surveyDescription" rows="3" placeholder="Enter description of survey here."></textarea>
+              <textarea class="form-control" id="surveyDescription" rows="3" placeholder="Enter description of survey here." required></textarea>
             </div>
 
             <hr class="featurette-divider">
 
             <div class="form-group">
               <label for="surveyQuestion"><h4>Question</h4></label>
-              <input type="text" class="form-control" id="surveyQuestion" placeholder="What would you like to ask people?">
+              <input type="text" class="form-control" id="surveyQuestion" placeholder="What would you like to ask people?" required>
             </div>
 
             <h4>Responses</h4>
             <p>Enter in 5 responses you would like to track for your question.</p>
             
             <div class="form-group">
-              <label for="response1"><h5>Response 1</h5></label>
-              <input type="text" class="form-control" id="response1">
               
+              <input type="text" class="form-control" id="response1" required>
+              <label for="response1"><h5>Response 1</h5></label>
+              
+              <input type="text" class="form-control" id="response2" required>
               <label for="response2"><h5>Response 2</h5></label>
-              <input type="text" class="form-control" id="response2">
 
+              <input type="text" class="form-control" id="response3" required>
               <label for="response3"><h5>Response 3</h5></label>
-              <input type="text" class="form-control" id="response3">
 
+              <input type="text" class="form-control" id="response4"required>
               <label for="response4"><h5>Response 4</h5></label>
-              <input type="text" class="form-control" id="response4">
 
+              <input type="text" class="form-control" id="response5"required>
               <label for="response5"><h5>Response 5</h5></label>
-              <input type="text" class="form-control" id="response5">
             </div>
 
             <!-- Survey Dates -->
@@ -156,13 +160,13 @@
               <div class="col-md-6">
                 <h4>Start Survey On:</h4>
                 <div class="input-group" id="sandbox-container">
-                    <input type="text" class="form-control" value="2018-04-05">
+                    <input type="text" class="form-control" value="2018-04-05" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <h4>Close Survey On:</h4>
                 <div class="input-group" id="sandbox-container">
-                  <input type="text" class="form-control" value="2018-04-19">
+                  <input type="text" class="form-control" value="2018-04-19" required>
                 </div>
               </div>
             </div>
@@ -171,7 +175,7 @@
             <div class="row featurette">
 
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
                 </div>
             </div>
 
@@ -189,7 +193,8 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
     <script type="text/javascript" src="javascript/view_survey.js"></script>
 </body>
 </html>
