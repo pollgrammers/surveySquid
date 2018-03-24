@@ -16,8 +16,8 @@ $(function() {
         console.log("In function view survey result");
 
         var surveyId = $(this).attr("id");
-        var queryUrl = "http://localhost:3000/api/user/1/survey/1/response";
-        // var queryUrl = "https://floating-temple-72911.herokuapp.com/api/user/1/survey/1/response";
+        // var queryUrl = "http://localhost:3000/api/user/1/survey/1/response";
+        var queryUrl = "https://floating-temple-72911.herokuapp.com/api/user/1/survey/1/response";
         
         $.ajax({
             url: queryUrl,
@@ -31,7 +31,12 @@ $(function() {
             var data = [];
             for(i=0; i<surveyResult[0].SurveyQuestions[0].SurveyQuestionChoices.length; i++){
                 labels.push(surveyResult[0].SurveyQuestions[0].SurveyQuestionChoices[i].choice_text);
-                data.push(surveyResult[0].SurveyQuestions[0].SurveyQuestionChoices[i].SurveyResponse.choice_count);
+                if(surveyResult[0].SurveyQuestions[0].SurveyQuestionChoices[i].SurveyResponse !== null){
+                    data.push(surveyResult[0].SurveyQuestions[0].SurveyQuestionChoices[i].SurveyResponse.choice_count);
+                } else{
+                    data.push(0);    
+                }
+                
             }
             var popCanvas = document.getElementById("popChart");
             var barChart = new Chart(popCanvas, {

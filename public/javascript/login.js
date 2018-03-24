@@ -26,40 +26,42 @@ function googleLogin(element) {
         function(googleUser) {
             console.log("Google login successful");
 
-            //Store the entity object in sessionStorage where it will be accessible from all pages of the site.
-            var userSessionEntity = {};
-            userSessionEntity.id = googleUser.getBasicProfile().getId();
-            userSessionEntity.name = googleUser.getBasicProfile().getName();
-            userSessionEntity.imageUrl = googleUser.getBasicProfile().getImageUrl();
-            userSessionEntity.email = googleUser.getBasicProfile().getEmail();
-            userSessionEntity.idToken = googleUser.getAuthResponse().id_token;
-            sessionStorage.setItem("userSessionEntity", JSON.stringify(userSessionEntity));
+            var user = {};
+            user.user_email = googleUser.getBasicProfile().getEmail();
+            user.user_fname = googleUser.getBasicProfile().getName();
+            user.user_image = googleUser.getBasicProfile().getImageUrl();
 
-            window.location.href = "viewsurvey.html";
 
-            // database.ref("/crammingUsers").orderByChild("email").equalTo(googleUser.getBasicProfile().getEmail()).once("value", function(snapshot) {
-            //     if (snapshot.val() !== null) {
-            //         console.log("Existing user");
-            //         window.location.href = "feed.html";
-            //         return;
-            //     } else {
-            //         console.log("user is not null");
-            //         var crammingUser = {
-            //             "id": googleUser.getBasicProfile().getId(),
-            //             "name": googleUser.getBasicProfile().getName(),
-            //             "imageUrl": googleUser.getBasicProfile().getImageUrl(),
-            //             "email": googleUser.getBasicProfile().getEmail(),
-            //             "phone": "",
-            //             "receiveTextNotification": true
-            //         };
-            //         database.ref("/crammingUsers").push(crammingUser);
-            //         window.location.href = "profile.html";
-            //     }
+            $.ajax({
+                url: "https://floating-temple-72911.herokuapp.com/api/user",
+                method: "POST",
+                crossDomain: true,
+                data: user,
+                dataType: 'jsonp',
+            }).done(function(user) {
+                console.log(user);
+                //Store the entity object in sessionStorage where it will be accessible from all pages of the site.
+                var userSessionEntity = {};
+                userSessionEntity.id = user.user_id;
+                userSessionEntity.googleId = googleUser.getBasicProfile().getId();
+                userSessionEntity.name = user.user_fname;
+                userSessionEntity.imageUrl = user.user_image;
+                userSessionEntity.email = user.user_email;
+                userSessionEntity.idToken = googleUser.getAuthResponse().id_token;
+                sessionStorage.setItem("userSessionEntity", JSON.stringify(userSessionEntity));
 
-            // });
+                window.location.href = "viewsurvey.html";
+
+
+            }).fail(function(xhr, status, error) {
+                console.log(error);
+                window.location.href = "index.html";
+            });
+
         },
         function(error) {
             console.log("failed signin" + error);
+            window.location.href = "index.html";
         });
 }
 
