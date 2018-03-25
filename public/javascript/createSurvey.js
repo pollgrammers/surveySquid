@@ -64,7 +64,7 @@ $(document).ready(function(){
 
         // After the data from the AJAX request comes back
         .done(function(response) {
-            window.location.href = "http://localhost:3000/viewSuvery.html";
+            window.location.href = "https://floating-temple-72911.herokuapp.com/viewSuvery.html";
 
       });
 
