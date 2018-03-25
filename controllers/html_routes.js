@@ -33,6 +33,11 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/", function(req, res) {
+        console.log("Home page request");
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+    });
+
     app.get("/create", function(req, res) {
         console.log("We hit create route!");
         res.sendFile(path.join(__dirname, "../public/createSurvey.html"));

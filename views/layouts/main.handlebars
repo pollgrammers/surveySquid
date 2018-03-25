@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
     <title>SurveySquid</title>
     <!-- Reset CSS -->
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
@@ -22,6 +21,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <!-- link to load google API for signin -->
+    <script src="https://apis.google.com/js/api:client.js"></script>
     <!-- SurveySquid CSS -->
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
 </head>
@@ -41,7 +44,7 @@
         </ul>
         <nav>
             <div class="nav-wrapper">
-                <!-- <a href="feed.html" class="brand-logo"><img class="logo" src="images/placeholder-logo.png"></a> -->
+                <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="feed.html" class="redText">My Surveys</a></li>
@@ -58,14 +61,7 @@
             </div>
         </nav>
     </div>
-
-
-
-        {{{body}}}
-
-
-
-
+    {{{body}}}
     <!-- bottom navigation -->
     <footer class="page-footer">
         <div class="footer-copyright">
@@ -75,6 +71,7 @@
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="../javascript/login.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script type="text/javascript" src="../javascript/view_survey.js"></script>
 </body>
