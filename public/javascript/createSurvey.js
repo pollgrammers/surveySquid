@@ -1,14 +1,14 @@
 $(document).ready(function(){
     console.log("working!");
 
-    //Get the form
-    var form = $('#ajax-createSurvey');
     //Get the message div
     var formMessages = $('#form-messages');
 
     // //date picker
-    // $('#sandbox-container input').datepicker({
-    // });
+    $('#sandbox-container .input-daterange').datepicker({
+    });
+
+    
 
     $("#submit").on("click", function(event) {
 
