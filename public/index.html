@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <title>SurveySquid</title>
     <!-- Reset CSS -->
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
     <!-- Bootstamp CSS and Javascript -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -26,13 +26,41 @@
     <!-- link to load google API for signin -->
     <script src="https://apis.google.com/js/api:client.js"></script>
     <!-- SurveySquid CSS -->
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
 </head>
 
 <body>
-    <!-- Top navbar -->
+    <!-- top navigation -->
     <div id="topNav">
-        <nav>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="profile.html">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#" id="navSignout">Logout</a></li>
+        </ul>
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="profile.html">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#" id="navSignout">Logout</a></li>
+        </ul>
+        <nav id="navSignedIn">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="feed.html" class="redText">My Surveys</a></li>
+                    <li><a href="create.html" class="redText">Create Survey</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button redText" href="#!" data-activates="dropdown1">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="feed.html" class="redText">My Survey</a></li>
+                    <li><a href="create.html" class="redText">Create Survey</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button redText" href="#!" data-activates="dropdown2">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="navSignedOut">
             <div class="nav-wrapper">
                 <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -45,6 +73,8 @@
             </div>
         </nav>
     </div>
+    <script type="text/javascript" src="javascript/session.js"></script>
+
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -84,7 +114,8 @@
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="javascript/login.js"></script>
+    <script type="text/javascript" src="/javascript/login.js"></script>
+    <script type="text/javascript" src="/javascript/index.js"></script>
 </body>
 
 </html>

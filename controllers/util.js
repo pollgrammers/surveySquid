@@ -34,15 +34,19 @@ var util = {
         var dbJson = {};
 
         requestJson.SurveyQuestions.forEach(function(surveyQuestion) {
-            dbJson.respondent_user_id = requestJson.respondent_user_id;
+            console.log("Respondent user id is " + surveyQuestion.respondent_user_id);
+            if(surveyQuestion.respondent_user_id != "" && surveyQuestion.respondent_user_id != null && surveyQuestion.respondent_user_id != undefined){
+                dbJson.respondent_user_id = surveyQuestion.respondent_user_id;    
+            }
             dbJson.survey_id = surveyId;
             dbJson.question_id = surveyQuestion.question_id;
             dbJson.choice_id = surveyQuestion.choice_id;
-
+            console.log(dbJson);
             dbJsonArray.push(dbJson);
             dbJson = {};
         });
 
+        console.log();
         return dbJsonArray;
     }
 }

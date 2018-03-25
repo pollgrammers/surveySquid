@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <title>SurveySquid</title>
     <!-- Reset CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
     <!-- Bootstamp CSS and Javascript -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -26,7 +26,7 @@
     <!-- link to load google API for signin -->
     <script src="https://apis.google.com/js/api:client.js"></script>
     <!-- SurveySquid CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
 </head>
 
 <body>
@@ -42,7 +42,7 @@
             <li class="divider"></li>
             <li><a href="#" id="navSignout">Logout</a></li>
         </ul>
-        <nav>
+        <nav id="navSignedIn">
             <div class="nav-wrapper">
                 <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -60,20 +60,31 @@
                 </ul>
             </div>
         </nav>
+        <nav id="navSignedOut">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li id="btnLogin" class="redText login"><a>Login</a></li>
+                </ul>
+                <ul id="mobile-demo" class="side-nav">
+                    <li id="btnLogin" class="redText login"><a>Login</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
+    <script type="text/javascript" src="/javascript/session.js"></script>
     {{{body}}}
     <!-- bottom navigation -->
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
-                <a class="left botmLinks redText" href="contact.html">Contact</a>
-                <span class="right redText">Copyright &copy; 2018 SurveySquid &middot;</span>
+                <a class="left" href="contact.html">Contact Us</a>
+                <span class="right">Copyright &copy; 2018 SurveySquid</span>
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="../javascript/login.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script type="text/javascript" src="../javascript/view_survey.js"></script>
+
 </body>
 
 </html>
