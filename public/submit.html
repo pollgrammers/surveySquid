@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <title>SurveySquid</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <!-- Bootstamp CSS and Javascript -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Materialze CSS and Javascript-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- SurveySquid CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+    <!-- top navigation -->
+    <div id="topNav">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="profile.html">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#" id="navSignout">Logout</a></li>
+        </ul>
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="profile.html">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#" id="navSignout">Logout</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper">
+                <!-- <a href="feed.html" class="brand-logo"><img class="logo" src="images/placeholder-logo.png"></a> -->
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="feed.html" class="redText">My Surveys</a></li>
+                    <li><a href="create.html" class="redText">Create Survey</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button redText" href="#!" data-activates="dropdown1">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="feed.html" class="redText">My Survey</a></li>
+                    <li><a href="create.html" class="redText">Create Survey</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button redText" href="#!" data-activates="dropdown2">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+     <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+      
+    <div class="jumbotron d-flex align-items-center" style="background-color:#449DD1; display: flex;">
+      <div class="row">
+        <div class="col-md-3 align-items-center">
+            <img class="jumbotron-image center-block" src="images/surveySquidLogo.png" alt="SurveySquid Logo" wideth="250" height="250">
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8 text-center">
+            <br><br><br>
+            <h1>Create Survey</h1>
+        </div>
+      </div>
+    </div>
+
+         <!-- Description Row -->
+    <div class="container">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h3 class="featurette-heading">What to do</h3>
+          <p class="lead">Hello Squids! Use the form below to fill out the survey.</p>
+        </div>
+        
+      </div>
+
+      <hr class="featurette-divider">
+
+
+            <!-- Question  -->
+    
+
+
+
+<form action="#" class="dots">
+     <h5> How likely are you to recommend today's session to your friends? </h5>
+
+    <p>
+      <input name="group1" type="radio" id="test1" />
+      <label for="test1" class="answers">Most likely</label>
+    </p>
+    <p>
+      <input name="group1" type="radio" id="test2" />
+      <label for="test2" class="answers">Somwhat likely</label>
+    </p>
+     <p>
+      <input name="group1" type="radio" id="test3" />
+      <label for="test3" class="answers">neutral</label>
+    </p>
+     <p>
+      <input name="group1" type="radio" id="test4" />
+      <label for="test4" class="answers">Unlikely</label>
+    </p>
+    
+  </form>
+
+
+
+    <br>
+    <div class="row">
+        <a class="col-md-4 btn btn-primary btn-lg jumbotron-link" id="submitButton" href="#" role="button">Submit your answers</a>
+        </div>
+    </div>
+
+
+
+    <!-- bottom navigation -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <a class="left botmLinks redText" href="contact.html">Contact</a>
+                <span class="right redText">Copyright &copy; 2018 SurveySquid &middot;</span>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="javascript/view_survey.js"></script>
+</body>

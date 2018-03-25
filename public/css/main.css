@@ -73,6 +73,31 @@ html, body {
 
 /* ---------- End Bottom Nav ---------- */
 
+/* ---------- submit_survey.html ---------- */
+
+#submitButton {
+background-color: #1E90FF;
+color: white;
+
+}
+
+
+.answers{
+    color: black;
+
+}
+
+.dots{
+    color: black;
+}
+
+
+
+
+
+
+/* ---------- End submit_survey.html ---------- */
+
 
 /* ---------- view_survey.html ---------- */
 .surveyCard {
