@@ -1,16 +1,10 @@
-$(document).ready(function(){
-    console.log("working!");
+$(function() {
+    //For responsive navbar
+    $(".dropdown-button").dropdown({ hover: false });
+    $(".button-collapse").sideNav();
 
-    //Get the message div
-    var formMessages = $('#form-messages');
-
-    // //date picker
-    $('#sandbox-container .input-daterange').datepicker({
-    });
-
-    
-
-    $("#submit").on("click", function(event) {
+    $(document).on("click", "#submit", function(event) {
+        event.preventDefault();
 
         var name = $("#surveyName").val();
         var description = $("#surveyDescription").val();
@@ -22,7 +16,9 @@ $(document).ready(function(){
         var r5 = $("#response5").val();
         var startSurvey = $("#startDate").val();
         var endSurvey = $("#endDate").val();
-        var queryURL = "https://floating-temple-72911.herokuapp.com/api/user/1/survey";
+        console.log("1");
+        // var queryURL = "https://floating-temple-72911.herokuapp.com/api/user/1/survey";
+        var queryURL = "http://localhost:3000/api/user/1/survey";
         var postObject = {
             "user_id": "1",
             "survey_name": name,
@@ -30,44 +26,48 @@ $(document).ready(function(){
             "survey_type": "public",
             "survey_start_date": startSurvey,
             "survey_end_date": endSurvey,
-            "SurveyQuestions": [
-                {
-            "question_type": "choice",
-            "question_text": question,
-            "SurveyQuestionChoices": [
-                {
-                    "choice_text": r1
-                },
-                {
-                    "choice_text": r2
-                },
-                {
-                    "choice_text": r3
-                },
-                {
-                    "choice_text": r4
-                },
-                {
-                    "choice_text": r5
-                }
-            ]
-        }
-    ]
-        }
+            "SurveyQuestions": [{
+                "question_type": "choice",
+                "question_text": question,
+                "SurveyQuestionChoices": [{
+                        "choice_text": r1
+                    },
+                    {
+                        "choice_text": r2
+                    },
+                    {
+                        "choice_text": r3
+                    },
+                    {
+                        "choice_text": r4
+                    },
+                    {
+                        "choice_text": r5
+                    }
+                ]
+            }]
+        };
 
-        //Performing AJAX Get request to our queryURl
+
+        console.log(postObject);
+        // var queryURL = "https://floating-temple-72911.herokuapp.com/api/user/"+$("#inputSurveyUserId").val()+"/survey/"+$("#inputSurveyId").val()+"/response"; 
         $.ajax({
             url: queryURL,
             method: "POST",
+            crossDomain: true,
             data: postObject,
-          })
 
-        // After the data from the AJAX request comes back
-        .done(function(response) {
-            window.location.href = "https://floating-temple-72911.herokuapp.com/viewSuvery.html";
+        }).done(function(surveyResponse) {
+            console.log(surveyResponse);
+            // $("#modalThankYou").modal("open");   
 
-      });
+        }).fail(function(xhr, status, error) {
+            console.log("User API call failed: " + error);
+            // window.location.href = "/";
+
+        });
 
     });
+
 
 });
