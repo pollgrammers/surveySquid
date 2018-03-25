@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <title>SurveySquid</title>
     <!-- Reset CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <!-- Bootstamp CSS and Javascript -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -21,12 +22,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-    <!-- link to load google API for signin -->
-    <script src="https://apis.google.com/js/api:client.js"></script>
     <!-- SurveySquid CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 <body>
@@ -42,9 +39,9 @@
             <li class="divider"></li>
             <li><a href="#" id="navSignout">Logout</a></li>
         </ul>
-        <nav id="navSignedIn">
+        <nav>
             <div class="nav-wrapper">
-                <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
+                <!-- <a href="feed.html" class="brand-logo"><img class="logo" src="images/placeholder-logo.png"></a> -->
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="feed.html" class="redText">My Surveys</a></li>
@@ -60,31 +57,60 @@
                 </ul>
             </div>
         </nav>
-        <nav id="navSignedOut">
-            <div class="nav-wrapper">
-                <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li id="btnLogin" class="redText login"><a>Login</a></li>
-                </ul>
-                <ul id="mobile-demo" class="side-nav">
-                    <li id="btnLogin" class="redText login"><a>Login</a></li>
-                </ul>
-            </div>
-        </nav>
     </div>
-    <script type="text/javascript" src="/javascript/session.js"></script>
-    {{{body}}}
+    <!-- main container -->
+    <div id="feedContainer" class="wrapper">
+        <!-- search button -->
+        <div class="row search-wrapper">
+            <div class="input-field col-5 mx-auto mb-3">
+                <i class="material-icons prefix pt-3">search</i>
+                <input id="searchSurvey" placeholder="Search" type="text">
+            </div>
+        </div>
+        <!-- Survey Card -->
+        <div class="row">
+            <div class="col s12 m6" id="divSurvey">
+                <div class="card horizontal" id="surveyCard">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <button type="button" id="survey1" class="btn btn-primary view-survey">
+                            Launch demo modal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup Modal -->
+        <div class="modal fade" id="modelSurveyResult" tabindex="-1" role="dialog" aria-labelledby="modelSurveyResultLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" id="modelDialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modelSurveyResultLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <canvas id="popChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="push"></div>
+    </div>
     <!-- bottom navigation -->
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
-                <a class="left" href="contact.html">Contact Us</a>
-                <span class="right">Copyright &copy; 2018 SurveySquid</span>
+                <a class="left botmLinks redText" href="contact.html">Contact</a>
+                <span class="right redText">Copyright &copy; 2018 SurveySquid &middot;</span>
             </div>
         </div>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="javascript/view_survey.js"></script>
 </body>
 
 </html>

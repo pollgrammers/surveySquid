@@ -1,0 +1,50 @@
+<div class="container wrapper">
+    <div class="row featurette">
+        <div class="col-md-10">
+            <h3 class="featurette-heading" id="txtSurveyName">{{surveyDetail.survey_name}}</h3>
+            <p class="lead" id="txtSurveyDesc">{{surveyDetail.survey_desc}}</p>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <br>
+    <!-- Question  -->
+    <div class="row">
+        <div class="col-md-10">
+            <form class="dots" id="formSurvey">
+                <input type="hidden" id="inputSurveyUserId" name="user_id" value="{{surveyDetail.user_id}}">
+                <input type="hidden" id="inputSurveyId" name="survey_id" value="{{surveyDetail.survey_id}}">
+                {{#each surveyDetail.SurveyQuestions}}
+                    
+                        <p class="txtSurveyQuestion" id="{{question_id}}">{{question_text}}</p><br>
+                        <input type="hidden" name="question_id" value="{{question_id}}">
+                    
+                        {{#each SurveyQuestionChoices}}
+                            <p>
+                                <input name="inputChoice" type="radio" id="{{choice_id}}" value="{{choice_id}}" />
+                                <label for="{{choice_id}}" class="answers" id="txtSurveyOption">{{choice_text}}</label>
+                            </p>
+                        {{/each}}
+                    
+                {{/each}}
+                <br>
+                <div class="row">
+                    <a class="btn btn-primary btn-lg jumbotron-link" id="btnSubmitSurveyResponse" href="#" role="button">Submit your answers</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Thank You modal -->
+    <div id="modalThankYou" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Thank You</h4>
+            <p>Thank you for taking part in the survey. Your response has been registered!</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnCloseModal">Close</button>
+        </div>
+    </div>
+   
+    <div class="push"></div>
+</div>
+<script type="text/javascript" src="/javascript/login.js"></script>
+<script type="text/javascript" src="/javascript/submit.js"></script>

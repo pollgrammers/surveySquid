@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <title>SurveySquid</title>
     <!-- Reset CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <!-- Bootstamp CSS and Javascript -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -26,7 +27,7 @@
     <!-- link to load google API for signin -->
     <script src="https://apis.google.com/js/api:client.js"></script>
     <!-- SurveySquid CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 <body>
@@ -73,8 +74,46 @@
             </div>
         </nav>
     </div>
-    <script type="text/javascript" src="/javascript/session.js"></script>
-    {{{body}}}
+    <script type="text/javascript" src="javascript/session.js"></script>
+    <div class="container wrapper">
+        <div class="row featurette">
+            <div class="col-md-10">
+                <h3 class="featurette-heading" id="txtSurveyName">What to do</h3>
+                <p class="lead" id="txtSurveyDesc">Hello Squids! Use the form below to fill out the survey.</p>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <br>
+        <!-- Question  -->
+        <div class="row">
+            <div class="col-md-10">
+                <form action="#" class="dots">
+                    <p id="txtSurveyQuestion"> How likely are you to recommend today's session to your friends? </p><br>
+                    <p>
+                        <input name="group1" type="radio" id="inputSurveyOption1" />
+                        <label for="inputSurveyOption1" class="answers" id="txtSurveyOption1">Most likely</label>
+                    </p>
+                    <p>
+                        <input name="group1" type="radio" id="inputSurveyOption2" />
+                        <label for="inputSurveyOption2" class="answers" id="txtSurveyOption2">Somwhat likely</label>
+                    </p>
+                    <p>
+                        <input name="group1" type="radio" id="inputSurveyOption3" />
+                        <label for="inputSurveyOption3" class="answers" id="txtSurveyOption3">neutral</label>
+                    </p>
+                    <p>
+                        <input name="group1" type="radio" id="inputSurveyOption4" />
+                        <label for="inputSurveyOption4" class="answers" id="txtSurveyOption4">Unlikely</label>
+                    </p>
+                    <br>
+                    <div class="row">
+                        <a class="btn btn-primary btn-lg jumbotron-link" id="submitButton" href="#" role="button">Submit your answers</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="push"></div>
+    </div>
     <!-- bottom navigation -->
     <footer class="page-footer">
         <div class="footer-copyright">
@@ -84,7 +123,8 @@
             </div>
         </div>
     </footer>
-
+    <script type="text/javascript" src="javascript/login.js"></script>
+    <script type="text/javascript" src="javascript/submit.js"></script>
 </body>
 
 </html>
