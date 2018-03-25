@@ -1,10 +1,15 @@
-$(function() {
-    //For responsive navbar
-    $(".dropdown-button").dropdown({ hover: false });
-    $(".button-collapse").sideNav();
+$(document).ready(function() {
+    console.log("working!");
 
-    $(document).on("click", "#submit", function(event) {
-        event.preventDefault();
+    //Get the message div
+    var formMessages = $('#form-messages');
+
+    // //date picker
+    // $('#sandbox-container .input-daterange').datepicker({});
+
+
+
+    $("#submit").on("click", function(event) {
 
         var name = $("#surveyName").val();
         var description = $("#surveyDescription").val();
@@ -16,7 +21,6 @@ $(function() {
         var r5 = $("#response5").val();
         var startSurvey = $("#startDate").val();
         var endSurvey = $("#endDate").val();
-        console.log("1");
         // var queryURL = "https://floating-temple-72911.herokuapp.com/api/user/1/survey";
         var queryURL = "http://localhost:3000/api/user/1/survey";
         var postObject = {
@@ -46,28 +50,22 @@ $(function() {
                     }
                 ]
             }]
-        };
+        }
 
-
-        console.log(postObject);
-        // var queryURL = "https://floating-temple-72911.herokuapp.com/api/user/"+$("#inputSurveyUserId").val()+"/survey/"+$("#inputSurveyId").val()+"/response"; 
+        //Performing AJAX Get request to our queryURl
         $.ajax({
-            url: queryURL,
-            method: "POST",
-            crossDomain: true,
-            data: postObject,
+                url: queryURL,
+                method: "POST",
+                data: postObject,
+            })
 
-        }).done(function(surveyResponse) {
-            console.log(surveyResponse);
-            // $("#modalThankYou").modal("open");   
+            // After the data from the AJAX request comes back
+            .done(function(response) {
+                console.log(response);
+                window.location.href = "http://localhost:3000/viewSuvery.html";
 
-        }).fail(function(xhr, status, error) {
-            console.log("User API call failed: " + error);
-            // window.location.href = "/";
-
-        });
+            });
 
     });
-
 
 });

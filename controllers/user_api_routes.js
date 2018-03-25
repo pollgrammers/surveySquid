@@ -9,15 +9,6 @@ var db = require("../models");
 module.exports = function(app) {
     // Create a new user
     app.post("/api/user", function(req, res) {
-<<<<<<< HEAD
-        db.User.create({
-            user_email: req.body.user_email,
-            user_fname: req.body.user_fname,
-            user_lname: req.body.user_lname,
-            user_image: req.body.user_image
-        }).then(function(newUserDetail) {
-            res.json(newUserDetail);
-=======
 
         db.User.findOne({
             where: {
@@ -39,7 +30,6 @@ module.exports = function(app) {
                 res.json(userDetail);
             }
 
->>>>>>> af508a2ac27d15cc818310fc414bc3cdd4d82d77
         }).catch(function(error) {
             res.status(500).json({ error });
         });

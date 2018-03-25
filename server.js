@@ -17,11 +17,7 @@ app.use(methodOverride("_method"));
 app.use(express.static("public"));
 
 // parse application/x-www-form-urlencoded
-<<<<<<< HEAD
-app.use(bodyParser.urlencoded({ extended: false }));
-=======
 app.use(bodyParser.urlencoded({ extended: true }));
->>>>>>> af508a2ac27d15cc818310fc414bc3cdd4d82d77
 
 // parse application/json
 app.use(bodyParser.json());
