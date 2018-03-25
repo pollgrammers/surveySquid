@@ -5,16 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
     <title>SurveySquid</title>
     <!-- Reset CSS -->
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <!-- Bootstrap CSS file -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!-- Bootstrap Links -->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <!-- Bootstamp CSS and Javascript -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -25,20 +21,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Main stylesheet SurveySquid CSS-->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <!-- link to load google API for signin -->
     <script src="https://apis.google.com/js/api:client.js"></script>
-    <!-- Custom Java for this template -->
-    <script src="./javascript/createSurvey.js"></script>
+    <!-- SurveySquid CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
 </head>
-<!-- NAVBAR
-================================================== -->
 
 <body>
+    <!-- top navigation -->
     <div id="topNav">
-        <nav>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="profile.html">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#" id="navSignout">Logout</a></li>
+        </ul>
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="profile.html">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#" id="navSignout">Logout</a></li>
+        </ul>
+        <nav id="navSignedIn">
             <div class="nav-wrapper">
+                <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="feed.html" class="redText">My Surveys</a></li>
+                    <li><a href="create.html" class="redText">Create Survey</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button redText" href="#!" data-activates="dropdown1">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="feed.html" class="redText">My Survey</a></li>
+                    <li><a href="create.html" class="redText">Create Survey</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-button redText" href="#!" data-activates="dropdown2">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="navSignedOut">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li id="btnLogin" class="redText login"><a>Login</a></li>
@@ -49,6 +73,8 @@
             </div>
         </nav>
     </div>
+    <script type="text/javascript" src="javascript/session.js"></script>
+
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -77,45 +103,6 @@
             <div class="col-md-2"></div>
             <a class="col-md-5 btn btn-primary btn-lg survey-btn" href="#" role="button" id="survey-btn-2">My Surveys</a>
         </div>
-        <!-- Card Decks -->
-        <div class="card-deck">
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
-                    <div class="card-body">
-                        <h3 class="card-title">CSS SURVEY</h3>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-link btn btn-default">View Survey</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
-                    <div class="card-body">
-                        <h3 class="card-title">CSS SURVEY</h3>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-link btn btn-default">View Survey</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top" src="http://lorempixel.com/350/150/business/2" alt="Card image cap">
-                    <div class="card-body">
-                        <h3 class="card-title">CSS SURVEY</h3>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-link btn btn-default">View Survey</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Card Container -->
     </div>
     <!-- bottom navigation -->
@@ -127,8 +114,8 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script type="text/javascript" src="javascript/login.js"></script>
+    <script type="text/javascript" src="/javascript/login.js"></script>
+    <script type="text/javascript" src="/javascript/index.js"></script>
 </body>
 
 </html>

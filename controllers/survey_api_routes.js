@@ -118,6 +118,7 @@ module.exports = function(app) {
         ).then(function(surveyResponse) {
             res.json(surveyResponse);
         }).catch(function(error) {
+            console.log(error);
             res.status(500).json({ error });
         });
     });
