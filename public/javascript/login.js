@@ -38,8 +38,8 @@ function googleLogin(element) {
 
 
             $.ajax({
-                // url: "https://floating-temple-72911.herokuapp.com/api/user",
-                url: "http://localhost:3000/api/user",
+                url: "https://floating-temple-72911.herokuapp.com/api/user",
+                // url: "http://localhost:3000/api/user",
                 method: "POST",
                 crossDomain: true,
                 data: user,
