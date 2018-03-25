@@ -35,9 +35,8 @@ $(function() {
         surveyResponse.SurveyQuestions.push(SurveyQuestion);
 
         console.log(surveyResponse);
-        var queryUrl = "http://localhost:3000/api/user/"+$("#inputSurveyUserId").val()+"/survey/"+$("#inputSurveyId").val()+"/response"; 
+        var queryUrl = "https://floating-temple-72911.herokuapp.com/api/user/"+$("#inputSurveyUserId").val()+"/survey/"+$("#inputSurveyId").val()+"/response"; 
         $.ajax({
-            // url: "https://floating-temple-72911.herokuapp.com/api/user",
             url: queryUrl,
             method: "POST",
             crossDomain: true,
