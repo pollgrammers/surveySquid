@@ -3,6 +3,7 @@ var util = {
         console.log(requestJson);
         var dbJson = {};
 
+
         dbJson.user_id = requestJson.user_id;
         dbJson.survey_name = requestJson.survey_name;
         dbJson.survey_desc = requestJson.survey_name;

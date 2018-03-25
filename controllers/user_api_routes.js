@@ -6,6 +6,7 @@ var db = require("../models");
 
 // Routes
 // =============================================================
+
 module.exports = function(app) {
     // Create a new user
     app.post("/api/user", function(req, res) {

@@ -38,4 +38,5 @@ var htmlRoutes = require("./controllers/html_routes.js")(app);
 
 app.listen(PORT, function() {
     logger.debug("Survey Squid now listening on port :" + PORT);
+    
 });
