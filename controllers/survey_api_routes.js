@@ -95,12 +95,14 @@ module.exports = function(app) {
 
     // Create a new survey
     app.post("/api/user/:uid/survey", function(req, res) {
+        console.log("in POST new survey API");
         db.Survey.create(util.surveyReqJsonToDbMapper(req.body), {
             include: [{
                 model: db.SurveyQuestion,
                 include: [db.SurveyQuestionChoice]
             }]
         }).then(function(newSurvey) {
+            newSurvey.survey_url = "https://floating-temple-72911.herokuapp.com/survey/" + newSurvey.survey_id + "/respond";
             res.json(newSurvey);
         }).catch(function(error) {
             res.status(500).json({ error });

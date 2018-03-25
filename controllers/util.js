@@ -1,5 +1,6 @@
 var util = {
     surveyReqJsonToDbMapper: function(requestJson) {
+        console.log(requestJson);
         var dbJson = {};
 
         dbJson.user_id = requestJson.user_id;
@@ -27,6 +28,7 @@ var util = {
         });
         return dbJson;
     },
+    
     submitSurveyReqJsonToDbMapper: function(requestJson, surveyId) {
         var dbJsonArray = [];
         var dbJson = {};
