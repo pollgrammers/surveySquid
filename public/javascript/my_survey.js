@@ -26,7 +26,6 @@ $(function() {
             dataType: "jsonp",
         }).done(function(surveyResult) {
 
-
             console.log(surveyResult[0]);
             var labels = [];
             var data = [];

@@ -20,10 +20,9 @@ $(function() {
 
         var respondentUserId = null;
         if(sessionStorage.getItem("userSessionEntity") != null){
-        	var userSessionEntity = JSON.parse(sessionStorage.getItem("userSessionEntity"));
-        	respondentUserId = parseInt(userSessionEntity.id);
+            var userSessionEntity = JSON.parse(sessionStorage.getItem("userSessionEntity"));
+            respondentUserId = parseInt(userSessionEntity.id);
         }
-
 
 
         var surveyResponse = {};
@@ -56,8 +55,8 @@ $(function() {
     });
 
 
-	$(document).on("click", "#btnCloseModal", function(event) {
-		$("#modalThankYou").modal("close");
-		window.location.href = "/";
-	});
+    $(document).on("click", "#btnCloseModal", function(event) {
+        $("#modalThankYou").modal("close");
+        window.location.href = "/";
+    });
 });
