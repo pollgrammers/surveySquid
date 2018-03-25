@@ -95,20 +95,16 @@ module.exports = function(app) {
 
     // Create a new survey
     app.post("/api/user/:uid/survey", function(req, res) {
-<<<<<<< HEAD
-=======
+
         console.log("in POST new survey API");
->>>>>>> af508a2ac27d15cc818310fc414bc3cdd4d82d77
         db.Survey.create(util.surveyReqJsonToDbMapper(req.body), {
             include: [{
                 model: db.SurveyQuestion,
                 include: [db.SurveyQuestionChoice]
             }]
         }).then(function(newSurvey) {
-<<<<<<< HEAD
-=======
             newSurvey.survey_url = "https://floating-temple-72911.herokuapp.com/survey/" + newSurvey.survey_id + "/respond";
->>>>>>> af508a2ac27d15cc818310fc414bc3cdd4d82d77
+            res.json(newSurvey.survey_url);
             res.json(newSurvey);
         }).catch(function(error) {
             res.status(500).json({ error });
@@ -124,10 +120,7 @@ module.exports = function(app) {
         ).then(function(surveyResponse) {
             res.json(surveyResponse);
         }).catch(function(error) {
-<<<<<<< HEAD
-=======
             console.log(error);
->>>>>>> af508a2ac27d15cc818310fc414bc3cdd4d82d77
             res.status(500).json({ error });
         });
     });
@@ -172,11 +165,7 @@ module.exports = function(app) {
             },
             group: ["Survey.survey_id", "SurveyQuestions.question_id", "SurveyQuestions->SurveyQuestionChoices.choice_id"],
         }).then(function(surveyResponse) {
-<<<<<<< HEAD
             res.json(surveyResponse);
-=======
-            res.jsonp(surveyResponse);
->>>>>>> af508a2ac27d15cc818310fc414bc3cdd4d82d77
         }).catch(function(error) {
             res.status(500).json({ error });
         });
