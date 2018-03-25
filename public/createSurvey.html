@@ -15,27 +15,12 @@
      <!-- Reset CSS -->
      <link rel="stylesheet" type="text/css" href="css/reset.css" />
 
-    <!-- Bootstrap CSS file -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
     <!-- Bootstrap Links -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-     <!-- JQuery -->
-     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
-    <!-- Materialze CSS and Javascript-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Date Picker Links -->
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
+    
 
     <!-- Main stylesheet SurveySquid CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -101,7 +86,7 @@
           <p class="lead">Hello Squids! Use the form below to create a new survey.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="images/Survey-Blog-Image.png" alt="SurveyImage" width="200" height="200">
+          <img class="featurette-image img-responsive center-block" src="images/Survey-Blog-Image.png" alt="SurveyImage" width="200" height="170">
         </div>
       </div>
 
@@ -157,13 +142,13 @@
             <div class="row featurette">
               <div class="col-md-6">
                 <h4>Start Survey On:</h4>
-                <div class="input-group input-daterange">
+                <div class="input-group input-daterange" id="datepicker">
                     <input type="text" class="form-control" value="2018-04-05" id="startDate" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <h4>Close Survey On:</h4>
-                <div class="input-group" id="sandbox-container">
+                <div class="input-group input-daterange" id="datepicker">
                   <input type="text" class="form-control" value="2018-04-19" id="endDate" required>
                 </div>
               </div>
@@ -191,6 +176,16 @@
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="javascript/createSurvey.js"></script>
 </body>
+
+ <!-- JQuery -->
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+ <!-- Materialze CSS and Javascript-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <script type="text/javascript" src="javascript/createSurvey.js"></script>
+
 </html>
