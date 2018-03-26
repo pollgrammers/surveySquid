@@ -8,16 +8,15 @@ $(function() {
     });
 
     //get the current user from session
-    var userSessionEntity = {
-        "email": "someuser"
-    };
-    // var userSessionEntity = JSON.parse(sessionStorage.getItem("userSessionEntity"));
+    var userSessionEntity = JSON.parse(sessionStorage.getItem("userSessionEntity"));
+    var userId = userSessionEntity.id;
+
     $(document).on("click", ".view-survey", function(event) {
         console.log("In function view survey result");
 
         var surveyId = $(this).attr("id");
-        // var queryUrl = "http://localhost:3000/api/user/1/survey/1/response";
-        var queryUrl = "https://floating-temple-72911.herokuapp.com/api/user/1/survey/1/response";
+        // var queryUrl = "http://localhost:3000/api/user/" + userId + "/survey/" + surveyId + "/response";
+        var queryUrl = "https://floating-temple-72911.herokuapp.com/api/user/" + userId + "/survey/" + surveyId + "/response";
 
         $.ajax({
             url: queryUrl,
@@ -89,5 +88,24 @@ $(function() {
     });
 
 
+    $(document).on("click", ".share-survey", function(event) {
+        console.log("In function view survey result");
+        var surveyId = $(this).attr("id");
+        var surveyUrl = "https://floating-temple-72911.herokuapp.com/survey/" + surveyId + "/respond";
+        $("#aSurveyUrl").text(surveyUrl);
+        $("#aSurveyUrl").attr("href", surveyUrl);
+        $("#aFacebookShare").attr("href", "https://www.facebook.com/sharer.php?u="+surveyUrl);
+        $("#aTwitterShare").attr("href", "https://twitter.com/share?url="+surveyUrl+"&amp;text=Take my survey on SurveySquid &amp;hashtags=SurveySquid");
+        $("#aLinkedInShare").attr("href", "https://www.linkedin.com/shareArticle?mini=true&url="+surveyUrl);
+        $("#modalSurveyShare").modal("open");
+
+    });
+
+
+    $(document).on("click", "#btnCloseModal", function(event) {
+        console.log("in close modal");
+        $("#modalSurveyResult").modal("close");
+        $("#modalSurveyShare").modal("close");
+    });
 
 });

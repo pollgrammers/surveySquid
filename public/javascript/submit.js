@@ -8,7 +8,7 @@ $(function() {
     });
 
     $(document).on("click", "#btnSubmitSurveyResponse", function(event) {
-
+        event.preventDefault();
         var form = $("#formSurvey").serialize();
         console.log(form);
 

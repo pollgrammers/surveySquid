@@ -4,83 +4,98 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <title>SurveySquid</title>
-
-     <!-- Reset CSS -->
-     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-
-
-    <!-- Bootstrap Links -->
+    <!-- Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <!-- Bootstamp CSS and Javascript -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-    <!-- Main stylesheet SurveySquid CSS-->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Materialze CSS and Javascript-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <!-- link to load google API for signin -->
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <!-- SurveySquid CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
-<!-- NAVBAR
-================================================== -->
 
 <body>
+    <!-- top navigation -->
     <div id="topNav">
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="profile.html">Profile</a></li>
+            <li><a href="/profile_settings.html">Profile</a></li>
             <li class="divider"></li>
             <li><a href="#" id="navSignout">Logout</a></li>
         </ul>
         <ul id="dropdown2" class="dropdown-content">
-            <li><a href="profile.html">Profile</a></li>
+            <li><a href="/profile_settings.html">Profile</a></li>
             <li class="divider"></li>
             <li><a href="#" id="navSignout">Logout</a></li>
         </ul>
-        <nav>
+        <nav id="navSignedIn">
             <div class="nav-wrapper">
-                <!-- <a href="feed.html" class="brand-logo"><img class="logo" src="images/placeholder-logo.png"></a> -->
+                <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="feed.html" class="redText">My Surveys</a></li>
-                    <li><a href="create.html" class="redText">Create Survey</a></li>
+                    <li><a href="" class="redText mySurveys">My Surveys</a></li>
+                    <li><a href="" class="redText createSurvey">Create Survey</a></li>
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-button redText" href="#!" data-activates="dropdown1">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a href="feed.html" class="redText">My Survey</a></li>
-                    <li><a href="create.html" class="redText">Create Survey</a></li>
+                    <li><a href="" class="redText mySurveys">My Survey</a></li>
+                    <li><a href="" class="redText createSurvey">Create Survey</a></li>
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-button redText" href="#!" data-activates="dropdown2">User<i class="material-icons right redText">arrow_drop_down</i></a></li>
                 </ul>
             </div>
         </nav>
+        <nav id="navSignedOut">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo ml-4" id="txtLogo">SurveySquid</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li id="btnLogin" class="redText login"><a>Login</a></li>
+                </ul>
+                <ul id="mobile-demo" class="side-nav">
+                    <li id="btnLogin" class="redText login"><a>Login</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <script type="text/javascript" src="javascript/session.js"></script>
     <div class="jumbotron d-flex align-items-center" style="background-color:#449DD1; display: flex;">
-
-      <div class="row">
-        <div class="col-md-3 align-items-center">
-            <img class="jumbotron-image center-block" src="images/surveySquidLogo.png" alt="SurveySquid Logo" wideth="250" height="250">
+        <div class="row">
+            <div class="col-md-3 align-items-center">
+                <img class="jumbotron-image center-block" src="images/surveySquidLogo.png" alt="SurveySquid Logo" wideth="250" height="250">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-8 text-center">
+                <br>
+                <br>
+                <br>
+                <h1>Create Survey</h1>
+            </div>
         </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-8 text-center">
-            <br><br><br>
-            <h1>Create Survey</h1>
-        </div>
-      </div>
     </div>
-
-      <!-- Description Row -->
-<div class="container">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h3 class="featurette-heading">What to do</h3>
-          <p class="lead">Hello Squids! Use the form below to create a new survey.</p>
-        </div>
-
+    <!-- Description Row -->
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h3 class="featurette-heading">What to do</h3>
+                <p class="lead">Hello Squids! Use the form below to create a new survey.</p>
+            </div>
             <div class="col-md-5">
                 <img class="featurette-image img-responsive center-block" src="images/Survey-Blog-Image.png" alt="SurveyImage" width="200" height="170">
             </div>
@@ -94,7 +109,7 @@
                     <div class="form-group">
                         <label for="surveyName">
                             <h4>Survey Name</h4></label>
-                        <input type="text" class="form-control is-valid" id="surveyName" aria-describedby="surveyName" placeholder="Create Survey Name" required>
+                        <input type="text" class="form-control is-valid" id="surveyName" aria-describedby="surveyName" placeholder="Enter Survey Name" required>
                         <small id="surveyName" class="form-text text-muted">Pick something Squidalishes!</small>
                     </div>
                     <div class="form-group">
@@ -109,7 +124,7 @@
                         <input type="text" class="form-control" id="surveyQuestion" placeholder="What would you like to ask people?" required>
                     </div>
                     <h4>Responses</h4>
-                    <p>Enter in 5 responses you would like to track for your question.</p>
+                    <p>Enter in 4 responses you would like to track for your question.</p>
                     <div class="form-group">
                         <input type="text" class="form-control" id="response1" required>
                         <label for="response1">
@@ -123,9 +138,6 @@
                         <input type="text" class="form-control" id="response4" required>
                         <label for="response4">
                             <h5>Response 4</h5></label>
-                        <input type="text" class="form-control" id="response5" required>
-                        <label for="response5">
-                            <h5>Response 5</h5></label>
                     </div>
                     <!-- Survey Dates -->
                     <div class="row featurette">
@@ -152,28 +164,29 @@
                 </form>
             </div>
         </div>
-    </div>
+        <!-- Popup Modal -->
+        <div id="modalConfirmCreate" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h5 >Survey successfully created</h5>
+                <p>Your target auidence can access and respond to the survey via the URL below. You can copy and share the URL with them.</p> 
+                <a href="#" id="aNewSurveyUrl" target="_blank"></a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnCloseModal">Close</button>
+            </div>
+        </div>
     </div>
     <!-- bottom navigation -->
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
-                <a class="left botmLinks redText" href="contact.html">Contact</a>
-                <span class="right redText">Copyright &copy; 2018 SurveySquid &middot;</span>
+                <a class="left" href="contact.html" id="aContact">Contact Us</a>
+                <span class="right">Copyright &copy; 2018 SurveySquid</span>
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="javascript/login.js"></script>
+    <script type="text/javascript" src="javascript/create_survey.js"></script>
 </body>
-
-
- <!-- JQuery -->
- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
- <!-- Materialze CSS and Javascript-->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
- <script type="text/javascript" src="javascript/createSurvey.js"></script>
 
 </html>

@@ -22,7 +22,6 @@ html, body {
 
 a { 
     text-decoration: none;
-    color: white;
 }
 
 /* ---------- End App level styles ---------- */
@@ -76,7 +75,9 @@ a {
     height: 40px;
 }
 
-
+#aContact{
+    color: white;
+}
 /* ---------- End Bottom Nav ---------- */
 
 /* ---------- submit_survey.html ---------- */
@@ -102,10 +103,14 @@ color: white;
     height: 35% !important; 
     transform: translateY(-50%) !important;
 }
+/* ---------- End submit_survey.html ---------- */
 
-
-
-
+/* ---------- create_survey.html ---------- */
+#modalConfirmCreate { 
+    width: 50% !important;
+    height: 35% !important; 
+    transform: translateY(-50%) !important;
+}
 /* ---------- End submit_survey.html ---------- */
 
 
@@ -113,7 +118,7 @@ color: white;
 .surveyCard {
     margin: 5px;
     height: 200px;
-    width: 300px;
+    width: 305px;
     float: left;
     margin-bottom: 5px;
 }
@@ -122,9 +127,12 @@ color: white;
     width: 70% !important;
     height: 100% !important; 
     transform: translateY(-5%) !important;
-/*  display: flex;
-  position: relative;
-  width: auto;*/
+}
+
+#modalSurveyShare{
+    width: 70% !important;
+    height: 100% !important; 
+    transform: translateY(-5%) !important;
 }
 
 canvas{
