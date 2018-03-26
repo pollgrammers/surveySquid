@@ -77,7 +77,7 @@ module.exports = function(app) {
 
     app.get("/create", function(req, res) {
         console.log("We hit create route!");
-        res.sendFile(path.join(__dirname, "../public/createSurvey.html"));
+        res.sendFile(path.join(__dirname, "../public/create_survey.html"));
     });
 
 };

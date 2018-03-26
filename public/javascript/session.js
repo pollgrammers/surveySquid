@@ -14,8 +14,17 @@ function checkLoggedIn() {
     } else if ((page == "index.html" || page == "/" || page == "" || page == "submit.html" || page == "respond") && sessionStorage.getItem("userSessionEntity") != null){
         // Show navbar menu based in user logged in status
         console.log("Hiding navSignedOut");
+        var userSessionEntity = JSON.parse(sessionStorage.getItem("userSessionEntity"));
+        var userId = userSessionEntity.id;
+        $(".mySurveys").attr("href","/"+userId+"/survey");
+        $(".createSurvey").attr("href","/create");
         $("#navSignedOut").hide();
     } else{
+        console.log("Hiding navSignedOut");
+        var userSessionEntity = JSON.parse(sessionStorage.getItem("userSessionEntity"));
+        var userId = userSessionEntity.id;
+        $(".mySurveys").attr("href","/"+userId+"/survey");
+        $(".createSurvey").attr("href","/create");
         $("#navSignedOut").hide();
     }
 
