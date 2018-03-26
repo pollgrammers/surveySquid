@@ -27,8 +27,6 @@ a {
 /* ---------- End App level styles ---------- */
 
 
-
-
 /* ---------- Top Nav ---------- */
 
 .login {
@@ -79,6 +77,17 @@ a {
     color: white;
 }
 /* ---------- End Bottom Nav ---------- */
+
+
+/* ---------- Index page styles ---------- */
+
+#txtWelcomeMsg {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+}
+
+/* ---------- End Index page styles ---------- */
+
 
 /* ---------- submit_survey.html ---------- */
 
