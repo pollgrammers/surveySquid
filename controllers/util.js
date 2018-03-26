@@ -5,7 +5,7 @@ var util = {
 
         dbJson.user_id = requestJson.user_id;
         dbJson.survey_name = requestJson.survey_name;
-        dbJson.survey_desc = requestJson.survey_name;
+        dbJson.survey_desc = requestJson.survey_desc;
         dbJson.survey_type = requestJson.survey_type;
         dbJson.survey_start_date = requestJson.survey_start_date;
         dbJson.survey_end_date = requestJson.survey_end_date;
