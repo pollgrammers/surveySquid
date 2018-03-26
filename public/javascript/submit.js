@@ -6,6 +6,10 @@ $(function() {
     $("#modalThankYou").modal({
         dismissible: false
     });
+    //Disable the submit butting until all questions are answered
+    $("input:radio").change(function(){
+        $("#btnSubmitSurveyResponse").removeAttr("disabled");
+    });
 
     $(document).on("click", "#btnSubmitSurveyResponse", function(event) {
         event.preventDefault();

@@ -135,20 +135,21 @@ color: white;
 #modalSurveyResult{
     width: 70% !important;
     height: 100% !important; 
-    transform: translateY(-5%) !important;
+    transform: translateY(-15%) !important;
 }
 
 #modalSurveyShare{
     width: 70% !important;
     height: 100% !important; 
-    transform: translateY(-5%) !important;
+    transform: translateY(-15%) !important;
 }
 
-canvas{
-  margin: auto;
-  width:70% !important;
-  height:70% !important;
+#barChart{
+    margin: auto;
+}
 
+#divSurveyCardFooter{
+    border-color: #333 !important;;
 }
 
 /* ---------- End view_survey.html ---------- */

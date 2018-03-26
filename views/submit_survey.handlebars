@@ -15,7 +15,7 @@
                 <input type="hidden" id="inputSurveyId" name="survey_id" value="{{surveyDetail.survey_id}}">
                 {{#each surveyDetail.SurveyQuestions}}
                     
-                        <p class="txtSurveyQuestion" id="{{question_id}}">{{question_text}}</p><br>
+                        <p class="txtSurveyQuestion" id="question{{question_id}}">{{question_text}}</p><br>
                         <input type="hidden" name="question_id" value="{{question_id}}">
                     
                         {{#each SurveyQuestionChoices}}
@@ -28,7 +28,7 @@
                 {{/each}}
                 <br>
                 <div class="row">
-                    <a class="btn btn-primary btn-lg jumbotron-link" id="btnSubmitSurveyResponse" href="#" role="button">Submit your answers</a>
+                    <a class="btn btn-primary btn-lg jumbotron-link" id="btnSubmitSurveyResponse" href="#" role="button" disabled="true">Submit your answers</a>
                 </div>
             </form>
         </div>
